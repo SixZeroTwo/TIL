@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+    </div>
+    <script>
+        var box = document.querySelector('.box');
+        var offTop = box.offsetTop;
+        var offLeft = box.offsetLeft;
+        var boxW = box.offsetWidth;
+        var boxH = box.offsetHeight;
+        document.addEventListener('mouseover', function (e) {
+            box.style.top = (e.pageY - 0.5 * boxH) + 'px';
+            box.style.left = (e.pageX - 0.5 * boxW) + 'px';
+            console.log(box.offsetTop);
+            console.log(box.offsetLeft);
+        })
+
+    </script>
+</body>
+
+</html>

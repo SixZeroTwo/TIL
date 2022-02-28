@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>1111ixi</h1>
+    <script>
+        class Phone {
+            constructor(name, price) {
+                this.name = name
+                this.price = price
+            }
+
+            call() {
+                console.log(this.name + '呼叫')
+            }
+        }
+        let phone = new Phone('onePlus', 1400)
+        class smartphone extends Phone {
+            constructor(name, price, tag) {
+                super(name, price)
+                this.tag = tag
+            }
+        }
+        let xiaomi = new smartphone('xiaomi', 1500, 'X6')
+        xiaomi.call()
+    </script>
+</body>
+
+</html>

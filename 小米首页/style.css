@@ -1,0 +1,167 @@
+/* 预处理 */
+*{
+    margin:0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box; /* css3盒子模型 */
+}
+.clearfix:before,.clearfix:after {
+    content:"";
+    display:table; 
+  }
+  .clearfix:after {
+    clear:both;
+  }
+  .clearfix {
+     *zoom:1;
+  }   
+.w{
+    margin:0 auto;
+    width: 1225px;
+}
+
+/* 头部 */
+header{
+    height: 40px;
+    width: 100%;
+    color: #b0b0b0;
+    font-size: 12px;
+    background-color: #333333;
+}
+.topbar{
+    height: 40px;
+    line-height: 40px;
+}
+.topbar_nav{
+    float: left;
+    height: 40px;
+}
+
+header .topbar_nav li{
+    float: left;
+}
+
+.topbar_login{
+float: right;
+width: 155px;
+}
+.topbar_login li{
+    float: left;
+}
+.shopcar{
+    width: 120px;
+    float:right;
+    background-color: #424242;
+    text-align: center;
+}
+.sep{
+    float: left;
+    margin: 0 5px;
+    color:#423c37;
+}
+
+/* nav部分 */
+nav{
+    height: 100px;
+    padding: 25px 0;
+    padding-bottom: 20px;
+}
+.nav_content{
+    position: relative;
+    height: 55px;
+}
+.logo{
+    position: absolute;
+    overflow: hidden;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    background-color: #ff6700;
+}
+.logo1{
+position: absolute;
+left: 2px;
+top: 2px;
+transition: all 0.3s ease;
+}
+.logo2{
+position: absolute;
+left: 57px;
+top: 2px;
+transition: all 0.3s ease;
+}
+.logo:hover .logo1{
+margin-left: -55px;
+}
+.logo:hover .logo2{
+    margin-left: -55px;
+    }
+.nav_items{
+    float: left;
+    margin-left: 244px;
+
+    line-height: 55px;
+}
+.nav_items a{
+    color: #333333;
+    margin-right: 0.7em;
+}
+.search{
+    float: right;
+}
+
+.search input{
+    float: left;
+    width: 300px;
+    height: 55px;
+    text-indent: 1em;
+    border: 1px solid gray;
+}
+.search button{
+    float: left;
+    width: 65px;
+    height: 55px;
+    border: 1px solid gray;
+    border-left: none;
+    background-color: #ffffff;
+}
+
+.home_container{
+    position: relative;
+    height: 460px;
+}
+
+.container_items{
+    position: absolute;
+}
+.change{
+    position: absolute;
+    bottom: 30px;
+    right: 40px;
+}
+.change a{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+border-radius: 50%;
+background-color: #919191;
+}
+.left_arr{
+    position: absolute;
+    left: 295px;
+    top: 50%;
+    width: 50px;
+    height: 85px;
+    margin-top: -42.5px;
+}
+.right_arr{
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    width: 50px;
+    height: 85px;
+    margin-top: -42.5px;
+}

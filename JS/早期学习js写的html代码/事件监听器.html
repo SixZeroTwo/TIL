@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #demo {
+            height: 100px;
+            width: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h3 id="demo">点我一下</h3>
+    <script>
+        var demo = document.getElementById("demo");
+        demo.addEventListener("click", func1());
+        demo.addEventListener("click", func2());
+        demo.addEventListener("click", func3());
+        function func1() {
+            demo.innerHTML += "<br>再点一下"
+        }
+        function func2() {
+            demo.innerHTML += "<br>还点一下"
+        }
+        function func3() {
+            demo.innerHTML += "<br>byebye"
+        }
+    </script>
+</body>
+
+</html>
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #myDiv1,
+        #myDiv2 {
+            background-color: coral;
+            padding: 50px;
+        }
+
+        #myP1,
+        #myP2 {
+            background-color: white;
+            font-size: 20px;
+            border: 1px solid;
+            padding: 20px;
+        }
+    </style>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+</head>
+
+<body>
+
+    <h1>JavaScript addEventListener()</h1>
+
+    <div id="myDiv1">
+        <h2>Bubbling:</h2>
+        <p id="myP1">第一段</p>
+    </div><br>
+
+    <div id="myDiv2">
+        <h2>Capturing:</h2>
+        <p id="myP2">第二段</p>
+    </div>
+
+    <script>
+        document.getElementById("myP1").addEventListener("click", function () {
+            alert("Div1");
+        }, false);
+
+        document.getElementById("myDiv1").addEventListener("click", function () {
+            alert("P1");
+        }, false);
+
+        document.getElementById("myP2").addEventListener("click", function () {
+            alert("Div2");
+        }, true);
+
+        document.getElementById("myDiv2").addEventListener("click", function () {
+            alert("P2");
+        }, true);
+    </script>
+
+</body>
+
+</html> -->

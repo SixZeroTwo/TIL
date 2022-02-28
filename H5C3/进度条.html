@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bar {
+            width: 150px;
+            height: 15px;
+            padding: 1px;
+            border: 1px solid red;
+            border-radius: 5px
+        }
+
+        .bar_in {
+            width: 50%;
+            height: 100%;
+            background-color: red;
+            transition: all 0.2s ease 0.2s;
+        }
+
+        .bar:hover #inner {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bar">
+        <div class="bar_in" id="inner"></div>
+    </div>
+</body>
+
+</html>

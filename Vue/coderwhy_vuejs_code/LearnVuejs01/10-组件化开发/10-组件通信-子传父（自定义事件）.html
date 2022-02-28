@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <body>
+      <!-- 父组件模板 -->
+      <div id="app">
+        <!-- 监听子组件的事件 -->
+        <!-- 不用加参数，可以默认传入子组件的参数 -->
+        <cpn @item-click="cpnClick"></cpn>
+      </div>
+  
+      <!-- 子组件模板 -->
+      <template id="cpn">
+        <div>
+          <button v-for="item in categories" @click="btnClick(item)">{{item.name}}</button>
+        </div>
+      </template>
+  
+      <script src="../js/vue.js"></script>
+  
+      <script>
+        // 1, 子组件
+        const cpn = {
+          template: "#cpn",
+          data(){
+            return{
+              categories: [
+                {
+                  id: 'aaa', name: '热门推荐'
+                },
+                {
+                  id: 'bbb', name: '手机数码'
+                },
+                {
+                  id: 'ccc', name: '家用家电'
+                },
+                {
+                  id: 'ddd', name: '电脑办公'
+                }
+              ]
+            }
+          },
+          methods: {
+          btnClick(item){
+            // console.log(item);
+            // 发射事件：前面是自定义事件的名字，后面是自定义事件的参数
+            this.$emit('item-click', item)
+          }
+          }
+        };
+  
+        const app = new Vue({
+          el: "#app",
+          data: {
+            message: "zzz",
+          },
+          components: {
+            cpn,
+          },
+          methods: {
+            cpnClick(item){
+              console.log(item);
+            }
+          }
+        });
+      </script>
+  </body>
+</html>

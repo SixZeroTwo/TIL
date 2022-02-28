@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <h2>总价格：{{books[0].price + ...}}</h2> -->
+      <h2>总价格：{{totalPrice}}</h2>
+    </div>
+
+    <script src="../js/vue.js"></script>
+
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          books: [
+            {
+              id: 11,
+              name: "Unix编程艺术",
+              price: 56,
+            },
+            {
+              id: 12,
+              name: "代码大全",
+              price: 43,
+            },
+            {
+              id: 13,
+              name: "java从入门到跑路",
+              price: 72,
+            },
+            {
+              id: 14,
+              name: "mysql从入门到删库",
+              price: 31,
+            },
+          ],
+        },
+        computed: {
+          totalPrice: function () {
+            // return this.books.reduce();
+            //  map/filter/reduce等等补充 高阶函数
+            let result = 0;
+            for (let i = 0; i < this.books.length; i++) {
+              result += this.books[i].price;
+            }
+            // es6
+            // for(let i in this.books){
+
+            // }
+            // for(let book in this.books){
+
+            // }
+            return result;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

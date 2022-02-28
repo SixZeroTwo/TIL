@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo">
+        <h2>v-for遍历数组</h2>
+
+        <ul>
+            <li v-for="(person,index) in persons">
+                {{index}}----{{person.name}}----{{person.age}}
+                ---<button @click='del(index)'>删除</button>
+                ---<button @click='update(index)'>更新</button>
+            </li>
+        </ul>
+        <h2>v-for遍历对象</h2>
+        <ul>
+            <li v-for="(item,index) in persons[0]" :key="index">
+                {{index}}----{{item}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: '#demo',
+            data: {
+                persons: [
+                    { name: 'Tom', age: 16 },
+                    { name: 'Jack', age: 17 },
+                    { name: 'Rose', age: 18 },
+                    { name: 'Bob', age: 19 },
+                ],
+                newPerson: {
+                    name: 'Daddy',
+                    age: '40'
+                }
+            },
+            methods: {
+                del(index) {
+                    this.persons.splice(index, 1)
+                },
+                update(index) {
+                    this.persons.splice(index, 1, this.newPerson)
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

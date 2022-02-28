@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="vue.js"></script>
+    <title>Document</title>
+    <style>
+        .redFonts {
+            color: red;
+        }
+
+        .fontSize {
+            font-size: 40px;
+        }
+
+        .blueFonts {
+            color: blue
+        }
+    </style>
+</head>
+
+<body>
+    <div id="color">
+        <h2>style的变化</h2>
+        <p class v-bind:class="Pcolor">这是一段话</p>
+        <p :class='ObjClass'>class绑定了一个js对象</p>
+        <button @click='update'>更新</button>
+    </div>
+
+    <script>
+        var ColorVm = new Vue({
+            el: '#color',
+            data: {
+                Pcolor: 'redFonts',
+                ObjClass: {
+                    fontSize: true,
+                    redFonts: true
+                }
+            },
+            methods: {
+                update() {
+                    this.Pcolor = 'blueFonts'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .true {
+            color: green;
+        }
+
+        .false {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="demo"></ul>
+    <script>
+        var assert = function (value, message) {
+            var demo = document.getElementById("demo");
+            var li = document.createElement("li");
+            li.className = value ? "true" : "false";
+            var text = document.createTextNode(message)
+            li.appendChild(text);
+            demo.appendChild(li);
+
+        }
+        function Ninja() {
+            this.whoAmI = function () {
+
+                return this;
+            }.bind(this);
+        }
+        var ninja1 = new Ninja();
+        var ninja2 = {
+            whoAmI: ninja1.whoAmI
+        }
+        Ninja();
+        assert(this.whoAmI() === window, "window here?");
+        assert(ninja1.whoAmI() === ninja1, "ninja1 here?");
+        assert(ninja2.whoAmI() === ninja2, "ninja2 here?");
+    </script>
+</body>
+
+</html>

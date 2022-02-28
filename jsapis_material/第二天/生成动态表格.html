@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 500px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        thead {
+            background-color: gray;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            line-height: 40px;
+        }
+
+        /*         thead tr th {
+            padding: 5px 40px;
+            border-right: black 1px solid;
+        }
+
+        thead tr th:last-child {
+            border-right: 0px;
+        }
+
+        tbody tr {
+            border-top: 1px solid black;
+        }
+
+        tbody tr td {
+            padding: 5px 40px;
+            border-right: 1px black solid;
+        }
+
+        tbody tr td:last-child {
+            border-right: 0px;
+        } */
+    </style>
+</head>
+
+<body>
+    <table cellspacing='0'>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>科目</th>
+                <th>成绩</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        var tbody = document.querySelector('tbody');
+        function Stu(name, subj, scor, opt) {
+            this.info = [name, subj, scor, opt];
+            this.append = () => {
+                let tr = document.createElement('tr');
+                let tds = [];
+                for (let i = 0; i < 4; i++) {
+                    tds.push(document.createElement('td'));
+                    tds[i].innerHTML = this.info[i];
+                    tr.appendChild(tds[i]);
+                }
+                tbody.appendChild(tr);
+            }
+        }
+        var stu1 = new Stu('Andy', 'JS', 95, '删除');
+        stu1.append();
+        var stu2 = new Stu('Bibi', 'CPP', 100, '删除');
+        stu2.append();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+
+<body>
+    <div id="app">
+        <cpnc2></cpnc2>
+        <cpnc1></cpnc1>
+    </div>
+    <script>
+        //组件1
+        const cpnC1 = Vue.extend({
+            template: `
+                    <div>
+                        <h2>组件1</h2>
+                        <p>组件1的内容</p>
+                    </div>
+            `
+        })
+        //组件2，里面注册了组件1
+        const cpnC2 = Vue.extend({
+            template: `
+                    <div>
+                        <h2>组件2</h2>
+                        <p>组件2的内容</p>
+                        <cpnc1></cpnc1>
+                    </div>
+                    
+            `,
+            components: {
+                cpnc1: cpnC1,
+            }
+        })
+        //el为#app的Vue实例,注册了组件2
+        new Vue({
+            el: '#app',
+            components: {
+                cpnc2: cpnC2,
+            }
+        })
+    </script>
+</body>
+
+</html>

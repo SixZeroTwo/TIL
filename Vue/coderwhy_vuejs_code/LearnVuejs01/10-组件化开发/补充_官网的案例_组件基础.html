@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 1.演示prop的用法 可以把prop当作attribute一样传入进来，然后像data一样使用-->
+      <!-- <blog-post title="My journey with Vue"></blog-post>
+      <blog-post title="Blogging with Vue"></blog-post>
+      <blog-post title="Why Vuey is so fun"></blog-post> -->
+      <!-- <blog-post
+        v-for="post in posts"
+        v-bind:key="post.id"
+        :title="post.title"
+      ></blog-post> -->
+      <div :style="{fontSize: postFontSize + 'em'}">
+        <blog-post
+          v-for="post in posts"
+          :key="post.id"
+          :post="post"
+          @enlarge-text="onEnlargeText"
+        ></blog-post>
+        <custom-input v-model="searchText"></custom-input>
+        <h2>{{searchText}}</h2>
+        <alert-box>晚上好</alert-box>
+      </div>
+    </div>
+
+    <script src="../js/vue.js"></script>
+
+    <script>
+      Vue.component("blog-post", {
+        // props: ["title"],
+        props: ["post"],
+        // 将其value attribute绑定到一个名为value的prop上
+        // 在其 input 事件被触发时，将新的值通过自定义的input事件抛出
+        template: `
+        <div>
+        <h3>{{post.title}}</h3>
+        <button @click="$emit('enlarge-text', 0.1)">Enlarge text</button>
+        <div v-html="post.content"></div>
+        </div>`,
+      });
+
+      // 测试v-model
+      Vue.component("custom-input", {
+        props: ["value"],
+        template: `
+        <input
+        v-bind:value="value"
+        v-on:input="$emit('input', $event.target.value)"
+        />
+        `,
+      });
+
+      // 测试插槽
+      Vue.component("alert-box", {
+        template: `
+        <div class="demo-alert-box">
+          <strong>Error!</strong>
+          <slot></slot>
+        </div>
+        `,
+      });
+
+      const app = new Vue({
+        el: "#app",
+        data: {
+          posts: [
+            {
+              id: 1,
+              title: "My journey with Vue",
+              content: '<a href="www.baidu.com">百度一下</a>',
+            },
+            {
+              id: 2,
+              title: "Blogging with Vue",
+              content: '<a href="www.baidu.com">百度一下</a>',
+            },
+            {
+              id: 3,
+              title: "Why Vuey is so fun",
+              content: '<a href="www.baidu.com">百度一下</a>',
+            },
+          ],
+          postFontSize: 1,
+          searchText: "",
+        },
+        methods: {
+          onEnlargeText(enlargeAmount) {
+            this.postFontSize += enlargeAmount;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

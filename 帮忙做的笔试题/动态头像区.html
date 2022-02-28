@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #avatarList {
+      display: flex;
+      width: 100%;
+      height: 50px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .avatar {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border: 1px solid black;
+      border-radius: 30px;
+      background-size: 100%;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id='avatarList'></div>
+  <script>
+    const avatarList = ['1.png', '2.png']
+    renderContent()
+    function renderContent() {
+      let avatarBox = document.getElementById('avatarList')
+      let innerBox = document.createElement('div')
+      avatarBox.appendChild(innerBox)
+      let count = 0 //计数，超过十个不添加到节点
+      avatarList.forEach(element => {
+        if (++count <= 10) {
+          let newChild = document.createElement('div')
+          newChild.className = 'avatar'
+          newChild.style.backgroundImage = `url(${element})`
+          innerBox.appendChild(newChild)
+        }
+      })
+    }
+  </script>
+</body>
+
+
+</html>

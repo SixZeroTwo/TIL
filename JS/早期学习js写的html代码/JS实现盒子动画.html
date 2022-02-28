@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子動畫</title>
+    <style>
+        #demo {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            background-color: yellow;
+        }
+
+        #move {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+
+        #btn {
+            display: block;
+            margin: 20px auto;
+            height: 30px;
+            width: 83px;
+            border-radius: 12%;
+            transition: all 0.2s ease;
+        }
+
+        #btn:active {
+            width: 72px;
+            height: 90%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="demo">
+        <div id="move"></div>
+    </div>
+    <button id="btn">开始动画</button>
+    <script>
+        function atimation(eleId) {
+            var ele = document.getElementById(eleId);
+            var tick = 0;
+            var times = 10;
+            var timer = setInterval(() => {
+                if (tick <= 400) {
+                    ele.style.left = ele.style.top = tick + "px";
+                }
+                else {
+                    clearInterval(timer);
+                }
+                tick++;
+                console.log(ele.style.left);
+            }, times);
+        }
+        var btn = document.getElementById("btn");
+        btn.addEventListener("click", atimation("move"), false);
+    </script>
+</body>
+
+</html>

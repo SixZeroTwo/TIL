@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function red() {
+            console.log('red');
+        }
+        function green() {
+            console.log('green');
+        }
+        function yellow() {
+            console.log('yellow');
+        }
+
+        let light = (fn, time) => {
+            new Promise(resolve => {
+                setTimeout(() => {
+                    fn();
+                    resolve();
+                }, time);
+            }
+            )
+        };
+        function start() {
+            Promise.resolve()
+                .then(light(red, 3000))
+                .then(light(green, 1000))
+                .then(light(yellow, 2000))
+                .then(start());
+        }
+        start();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <template id="cpn">
+        <div>
+            <h2>当前计数：{{counter}}</h2>
+            <button @click='inc'>+</button>
+            <button @click='dec'>-</button>
+        </div>
+    </template>
+    <div id="demo">
+        <cpn></cpn>
+        <cpn></cpn>
+        <cpn></cpn>
+    </div>
+</body>
+<script>
+    //注册组件 Vue.component
+    new Vue({
+        el: '#demo',
+        components: {
+            cpn: {
+                template: '#cpn',
+                data() {
+                    return {
+                        counter: 0
+                    }
+                },
+                methods: {
+                    inc() {
+                        this.counter++
+                    },
+                    dec() {
+                        this.counter--
+                    }
+                }
+            }
+
+        }
+    })
+</script>
+
+</html>

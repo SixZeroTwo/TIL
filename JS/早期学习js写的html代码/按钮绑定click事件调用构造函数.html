@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="test">Click me!</button>
+    <button id="test1">对象button的val值</button>
+    <button id="test2">对象button1的val值</button>
+    <script>
+        var test = document.getElementById("test");
+        var test1 = document.getElementById("test1");
+        var test2 = document.getElementById("test2");
+        var disp = function (obj) {
+            console.log(obj.val);
+        };
+        function Button() {
+            this.val = false;
+            this.change = function () {
+                this.val = true;
+                window.alert(this);
+            }
+        }
+        var button = {};
+        var button1 = {};
+        Button.apply(button);
+        console.log(button.val);
+        button.change();
+        test.addEventListener("click", button.change());
+
+    </script>
+</body>
+
+</html>

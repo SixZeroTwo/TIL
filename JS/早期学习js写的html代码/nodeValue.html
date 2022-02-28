@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="demo1">节点的值nodeValue</h1>
+    <p id="demo2"></p>
+    <script>
+        document.getElementById('demo2').innerHTML = document.getElementById('demo1').childNodes[0].nodeValue;
+        this.alert(document.documentElement.nodeValue);
+        this.alert(document.documentElement.nodeType);
+        this.alert(document.documentElement.nodeName);
+    </script>
+</body>
+
+</html>

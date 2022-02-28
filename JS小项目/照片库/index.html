@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        h1,
+        .full-img,
+        .thumb-bar {
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .full-img {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin-bottom: 0px;
+            background-color: yellow;
+        }
+
+        .displayed-img {
+            width: 400px;
+            height: 400px;
+        }
+
+        .overlay {
+            position: absolute;
+            visibility: hidden;
+            left: 0;
+            top: 0;
+            width: 400px;
+            height: 400px;
+            opacity: 0.5;
+            background-color: gray;
+        }
+
+        .dark {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .thumb-bar {
+            width: 400px;
+            height: 100px;
+            background-color: black;
+        }
+
+        .thumb-bar img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>照片库</h1>
+
+    <div class="full-img">
+        <img class="displayed-img" src="images/pic1.jpeg">
+        <div class="overlay"></div>
+        <button class="dark">变暗</button>
+    </div>
+
+    <div class="thumb-bar">
+        <img src="images/pic1.jpeg" alt=""><img src="images/pic2.jpeg" alt=""><img src="images/pic3.jpeg" alt=""><img
+            src="images/pic4.jpeg" alt="">
+    </div>
+    <script type="text/javascript" src="base.js"></script>
+</body>
+
+</html>

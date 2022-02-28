@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一个假的世纪佳缘网站</title>
+</head>
+<body>
+    <h4>青春不常在，抓紧谈恋爱</h4>
+    <form action="no.php" method="GET" name="注册">
+        <table width="600">
+            <tr>
+                <td>性别</td>
+                <td>
+                    <input type="radio" name="sex" value="男"><img src="images/man.jpg">男
+                    <input type="radio" name="sex" value="女"><img src="images/women.jpg">女
+                </td>
+            </tr>
+            <tr>
+                <td>生日</td>
+                <td>
+                    <select name="birthyear">
+                        <option value="noyear" selected="selected">--请选择年--</option>
+                    </select>
+                    <select name="birthmonth">
+                        <option value="nomonth" selected="selected">--请选择月--</option>
+                    </select>
+                    <select name="birthday" >
+                        <option value="noday" selected="selected">--请选择日--</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>所在地区</td>
+                <td><input type="text" name="地区"></td>
+            </tr>
+            <tr>
+                <td>婚姻状况</td>
+                <td>
+                    <input type="radio" name="婚姻状况" value="未婚" checked>未婚
+                    <input type="radio" name="婚姻状况" value="已婚">已婚
+                    <input type="radio" name="婚姻状况" value="离婚">离婚
+                </td>                
+            </tr>
+            <tr>
+                <td>学历</td>
+                <td><input type="text" name="学历"></td>
+            </tr>
+            <tr>
+                <td>喜欢的类型</td>
+                <td>
+                    <input type="checkbox" name="喜欢类型" id="妩媚" value="妩媚的"><label for="妩媚">妩媚的</label>
+                    <input type="checkbox" name="喜欢类型" id="可爱" value="可爱的"><label for="可爱">可爱的</label>
+                    <input type="checkbox" name="喜欢类型" id="鲜肉" value="小鲜肉"><label for="鲜肉">小鲜肉</label>
+                    <input type="checkbox" name="喜欢类型" id="腊肉" value="老腊肉"><label for="腊肉">老腊肉</label>
+                    <input type="checkbox" name="喜欢类型" id="都" value="都喜欢"><label for="都">都喜欢</label>
+                </td>
+            </tr>
+            <tr>
+                <td>自我介绍</td>
+                <td>
+                    <textarea name="自我介绍" cols="30" rows="5"></textarea><br>
+                </td>
+            </tr> 
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="免费注册"><br>
+                    <input type="checkbox" name="是否同意标准" id="同意" value="同意标准" checked><label>我同意注册条款和会员加入标准</label><br>
+                    <a href="登陆页面.html" target="_blank"><ins>我是会员，立即登录</ins></a><br>
+                    <h3>我承诺</h3>
+                    <ul>
+                        <li>年满18岁、单身</li>
+                        <li>抱着严肃的态度</li>
+                        <li>真诚寻找另一半</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

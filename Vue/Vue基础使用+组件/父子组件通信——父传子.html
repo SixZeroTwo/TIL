@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <template id="cpn1">
+        <div>
+            <h2>{{cmsg}}</h2>
+            <h2 v-for="(item,index) in cmovies" :key='item'>{{item}}</h2>
+        </div>
+    </template>
+
+    <div id="demo">
+        <cpn1 :cmsg='message' :cmovies='movies'></cpn1>
+        <cpn1 :cmovies='movies'></cpn1>
+    </div>
+</body>
+<script>
+
+    const cpn1 = {
+        template: '#cpn1',
+        props: {
+            cmovies: Array,
+            cmsg: {
+                type: String,
+                default: 'Default Message!'
+            }
+        }
+    }
+    //注册组件 Vue.component
+    new Vue({
+        el: '#demo',
+        data: {
+            message: 'hello',
+            movies: ['Batman', 'Superman', 'Wonderwoman']
+        },
+        components: {
+            cpn1
+        }
+    })
+</script>
+
+</html>

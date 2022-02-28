@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <input type="text" v-model="message" /> -->
+      <!-- 通过:value来数据绑定，通过事件来更新model -->
+      <!-- 自动传入event，可以省略参数-->
+      <!-- <input type="text" :value="message" @input="valueChange" /> -->
+      <input
+        type="text"
+        :value="message"
+        @input="message = $event.target.value"
+      />
+
+      <h2>{{message}}</h2>
+    </div>
+
+    <script src="../js/vue.js"></script>
+
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          message: "你好",
+        },
+        methods: {
+          valueChange(event) {
+            // console.log(event.target.value);
+            this.message = event.target.value;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            margin: 200px;
+        }
+
+        span {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            font-size: 20px;
+            color: #fff;
+            text-align: center;
+            line-height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span class="hour">1</span>
+        <span class="minute">2</span>
+        <span class="second">3</span>
+    </div>
+    <script>
+        // 1. 获取元素 
+        var hour = document.querySelector('.hour'); // 小时的黑色盒子
+        var minute = document.querySelector('.minute'); // 分钟的黑色盒子
+        var second = document.querySelector('.second'); // 秒数的黑色盒子
+        var inputTime = +new Date('2021-5-1 18:00:00');
+        console.log(inputTime); // 返回的是用户输入时间总的毫秒数
+        countDown(); // 我们先调用一次这个函数，防止第一次刷新页面有空白 
+        // 2. 开启定时器
+        setInterval(countDown, 1000);
+
+        function countDown() {
+            var time = +new Date();
+            var countdownTime = (inputTime - time) / 1000;
+            var h = parseInt(countdownTime / (60 * 60) % 24);
+            var m = parseInt(countdownTime / 60 % 60);
+            var s = parseInt(countdownTime % 60);
+            hour.innerHTML = h;
+            minute.innerHTML = m;
+            second.innerHTML = s;
+        }
+    </script>
+</body>
+
+</html

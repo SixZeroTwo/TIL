@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <template id="cpn">
+        <div>
+            <input type="text" @input='cpnHandler'>
+            <h2>{{num1}}</h2>
+            <h2>{{num2}}</h2>
+        </div>
+    </template>
+
+    <div id="demo">
+        <h2>number1: {{number1}}</h2>
+        <cpn @cpn-emit='handler' :num1='number1' :num2='number2'></cpn>
+    </div>
+</body>
+<script>
+    //创建组件构造器对象 Vue.extend()
+    const cpnC = Vue.extend({
+        template: '#cpn',
+        props: {
+            num1: Number,
+            num2: Number,
+        },
+        methods: {
+            cpnHandler(event) {
+                console.log('子组件方法');
+                this.$emit('cpn-emit', event.target.value)
+            }
+        }
+    })
+    //注册组件 Vue.component
+    new Vue({
+        el: '#demo',
+        data: {
+            number1: 0,
+            number2: 1,
+        },
+        components: {
+            cpn: cpnC,
+        },
+        methods: {
+            handler(val) {
+                console.log(val);
+                this.number1 = parseInt(val)
+            }
+        }
+    })
+</script>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #result {
+            width: 200px;
+            height: 100px;
+            border: solid 1px #90b;
+        }
+    </style>
+</head>
+
+<body>
+    <button></button>
+    <div class="result"></div>
+    <script>
+        const btn = document.querySelector('button')
+        const result = document.querySelector('#result')
+        result.addEventListener('mouseover', () => {
+            //创建对象
+            const xhr = new XMLHttpRequest()
+            //初始化 设置请求的方法和url
+            xhr.open('GET', 'http://127.0.0.1:8000/IE')
+            //发送(POST方法可以通过这种方式传参)
+            xhr.send()
+            //事件判定
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        result.innerHTML = xhr.response
+
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

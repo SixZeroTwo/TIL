@@ -1,0 +1,23 @@
+<html>
+
+<body>
+    <p id="p1">Hello World!</p>
+    <p id="p2">Hello World!</p>
+    <p>上面的段落已被脚本改变。</p>
+    <p>按下按钮会隐藏和显示元素</p>
+    <button onclick="hid()">隐藏元素</button>
+    <button onclick="vis()">显示元素</button>
+
+    <script>
+        document.getElementById("p2").style.color = "blue";
+        document.getElementById("p2").style.fontSize = "50px";
+        function hid() {
+            document.getElementById("p2").style.visibility = "hidden";
+        }
+        function vis() {
+            document.getElementById("p2").style.visibility = "visible";
+        }
+    </script>
+</body>
+
+</html>

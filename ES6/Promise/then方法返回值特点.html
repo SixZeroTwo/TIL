@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = []
+        let p = new Promise((resolve, reject) => setTimeout(function () {
+            reject('NO')
+        }, 1000))
+
+        p.then(value => new Promise((resolve, reject) => resolve(value)), reason => {
+            console.log(reason + '!')
+            throw 'NOPE'
+        })
+            .then(value => console.log(value))
+            .then(value => console.log(value))
+            .catch(reason => console.warn(reason))
+    </script>
+</body>
+
+</html>

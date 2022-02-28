@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo">
+        <button @click='destroyVM'>destroy Vue</button>
+        <p v-show="isShow">我会闪哦</p>
+    </div>
+    <script>
+        new Vue({
+            el: '#demo',
+            data: {
+                isShow: true,
+            },
+            mounted() {
+                setInterval(() => {
+                    this.isShow = !this.isShow
+                }, 1000);
+            },
+            methods: {
+                destroyVM() {
+                    this.$destroy()
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>使用 document.forms 查找 HTML 元素</h1>
+
+    <form id="frm1" action="/demo/action_page.php">
+        First name: <input type="text" name="fname" value="Bill"><br>
+        Last name: <input type="text" name="lname" value="Gates"><br><br>
+        <input type="submit" value="提交">
+    </form>
+
+    <p>单击“试一试”按钮，显示表单中每个元素的值。</p>
+
+    <button onclick="myFunction()">试一试</button>
+
+    <p id="demo"></p>
+
+    <script>
+        function myFunction() {
+            var frm1 = document.forms["frm1"];
+            var txt = '';
+            for (i = 0; i < frm1.length; i++) {
+                txt += frm1[i].value + '<br>';
+            }
+            document.getElementById("demo").innerHTML = txt;
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .fade-enter-active,
+        .fade-leave-active {
+            transition: opacity .5s;
+        }
+
+        .fade-enter,
+        .fade-leave-to
+
+        /* .fade-leave-active below version 2.1.8 */
+            {
+            opacity: 0;
+        }
+
+        .fade-move-enter-active {
+            transition: all ease 1s;
+        }
+
+        .fade-move-leave-active {
+            transition: all ease 3s;
+        }
+
+        /*         隐藏时的效果
+ */
+        .fade-move-enter,
+        .fade-move-leave-to {
+            opacity: 0;
+            transform: translateX(20px);
+        }
+    </style>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="demo">
+        <button v-on:click="show = !show">
+            Toggle
+        </button>
+        <transition name="fade">
+            <p v-show="show">hello</p>
+        </transition>
+        <button v-on:click="show1 = !show1">
+            Toggle
+        </button>
+        <transition name="fade-move" mode="">
+            <p v-show="show1">hello</p>
+        </transition>
+    </div>
+    <script>
+        new Vue({
+            el: '#demo',
+            data: {
+                show: true,
+                show1: true
+            }
+        })
+    </script>
+</body>
+
+</html>

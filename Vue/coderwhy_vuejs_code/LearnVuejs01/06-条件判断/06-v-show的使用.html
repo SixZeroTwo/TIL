@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- v-if: 当条件为false,包含v-if指令的元素,根本就不会存在dom中 -->
+      <h2 v-if="isShow" id="aaa">{{message}}</h2>
+      <!-- v-show: 当条件为false的时候,v-show只是给我们的元素添加了一个display: none -->
+      <h2 v-show="isShow" id="bbb">{{message}}</h2>
+    </div>
+
+    <script src="../js/vue.js"></script>
+
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          message: "你好",
+          isShow: false,
+        },
+      });
+    </script>
+  </body>
+</html>

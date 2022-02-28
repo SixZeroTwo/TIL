@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <h2>我是标题</h2>
+      <h2>我是内容，哈哈哈哈</h2>
+      <h2>我是内容，呵呵额呵</h2> -->
+      <!-- 3.使用组件 -->
+
+      <!-- 第一种展示 -->
+      <my-cpn></my-cpn>
+      <my-cpn></my-cpn>
+      <my-cpn></my-cpn>
+      <!-- 第二种展示 -->
+      <div>
+        <my-cpn></my-cpn>
+      </div>
+    </div>
+
+    <!-- 第三种展示 -->
+    <my-cpn></my-cpn>
+
+    <script src="../js/vue.js"></script>
+
+    <script>
+      // es6 使用``可以跨行
+
+      // 1. 创建组件构造器对象
+      const cpnC = Vue.extend({
+        template: `
+        <div>
+          <h2>我是标题</h2>
+          <h2>我是内容，哈哈哈哈</h2>
+          <h2>我是内容，呵呵额呵</h2>
+        </div>
+        `,
+      });
+
+      // 2.注册组件
+      Vue.component("my-cpn", cpnC);
+
+      const app = new Vue({
+        el: "#app",
+        data: {},
+      });
+    </script>
+  </body>
+</html>

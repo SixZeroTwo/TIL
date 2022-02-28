@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="app">{{message}}</div>
+    <!-- 没有经过Vue管理 -->
+    <div>{{message}}</div>
+
+    <script src="../js/vue.js"></script>
+
+    <script>
+      // vue.js里面创建了Vue这个function，所以能够new
+      // let(变量)/const(常量)
+
+      //编程范式：声明式编程==》数据与界面分离
+      const app = new Vue({
+        el: "#app", // 用于挂载要管理的元素
+        data: {
+          //定义数据
+          message: "你好哇，李银河",
+        },
+      });
+
+      // 元素js的做法（编程范式：命令式编程）
+      // 1.创建div元素，设置id属性
+      // 2. 定义一个变量叫做message
+      // 3.将message变量放在前面的div元素中显示
+
+      // 4.修改mesasge数据
+      // 5.将修改后的数据放入div元素
+
+      // 在f12进行调试。console更改message的值
+    </script>
+  </body>
+</html>

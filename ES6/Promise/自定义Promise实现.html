@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Promise.js"></script>
+</head>
+
+<body>
+    <script>
+        let p = new Promise((resolve, reject) => {
+
+            resolve('YES')
+
+        })
+        p1 = p.then(value => new Promise((resolve, reject) => { reject() }))
+        /*         p2 = p.then(value => console.log(value + '2'), reason => console.warn(reason))
+                p3 = p.then(value => new Promise(
+                    (resolve, reject) => {
+                        throw 'test'
+                    }
+                )) */
+        console.log(p1);
+    </script>
+</body>
+
+</html>

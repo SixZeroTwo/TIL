@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            perspective: 500px;
+        }
+
+        .box {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin: 100px auto;
+            text-align: center;
+            line-height: 100px;
+            font-size: larger;
+            transform-style: preserve-3d;
+            transition: all 1s ease;
+        }
+
+        .box:hover {
+            transform: rotateX(90deg);
+        }
+
+        .front {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+
+            transform: translateZ(50px);
+        }
+
+        .bottom {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+            transform: translateY(50px) rotateX(-90deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="front">阿萌</div>
+        <div class="bottom">嘻嘻</div>
+    </div>
+</body>
+
+</html>

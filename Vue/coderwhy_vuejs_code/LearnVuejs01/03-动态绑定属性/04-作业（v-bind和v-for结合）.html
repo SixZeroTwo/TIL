@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 需求：点击列表中的哪一项，那么该项的颜色变成红色 -->
+    <div id="app">
+      <ul>
+        <li v-for="(movie, index) in movies">{{index}}--{{movie}} </li>
+      </ul>
+    </div>
+
+    <script src="../js/vue.js"></script>
+
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          movies: ["海尔兄弟", "火影忍者", "你的名字", "天气之子"],
+        },
+      });
+    </script>
+  </body>
+</html>

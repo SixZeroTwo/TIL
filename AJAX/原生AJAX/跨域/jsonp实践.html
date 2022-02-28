@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #usrname {
+            width: 100px;
+            height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <label for="usrname_input">
+        用户名：
+        <input type="text" name="" id="usrname">
+        <p></p>
+    </label>
+</body>
+<script>
+    //获取element
+    let usrname = document.querySelector('#usrname')
+    let p = document.querySelector('p')
+    //handle函数
+    function handle(data) {
+        //处理data，放到usrname框内，在p标签内输出不存在用户名
+        console.log(data.msg);
+        usrname.value = data.msg
+        usrname.style.border = 'solid 1px red'
+        if (data.exit === 1) {
+            p.innerHTML = '用户名不存在'
+        }
+
+    }
+    usrname.addEventListener('blur', function () {
+        let name = this.value
+        //向服务端发送请求，检测用户名是否存在，服务器返回的代码调
+        //用了handle()
+        let script = document.createElement('script')
+        script.src = 'http://127.0.0.1:8000/Jsonp'
+        document.body.appendChild(script)
+    })
+</script>
+
+</html>

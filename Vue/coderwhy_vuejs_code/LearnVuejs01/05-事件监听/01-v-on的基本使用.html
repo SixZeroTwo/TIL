@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h2>当前计数： {{counter}}</h2>
+      <!-- <button v-on:click="counter++">+</button> -->
+      <!-- <button v-on:click="counter--">-</button> -->
+      <!-- 语法糖 -->
+      <button v-on:click="add">+</button>
+      <button @click="sub">-</button>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          counter: 0,
+        },
+        methods: {
+          add() {
+            console.log("add会执行");
+            // 不能直接引用counter，才能引用app当中的counter  代理
+            this.counter++;
+          },
+          sub() {
+            console.log("sub会执行");
+            this.counter--;
+          },
+        },
+      });
+
+      // 1 拿button元素
+
+      // 2 添加监听事件
+    </script>
+  </body>
+</html>

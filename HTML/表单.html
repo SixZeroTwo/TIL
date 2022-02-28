@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单</title>
+</head>
+<body>
+    <!-- 表单域 -->
+    <!-- action和method的值服务器编程的时候再写 -->
+    <form action="no.php" method="GET" name="表单域">
+      <!-- 文本框，用户可以输入文本 -->
+      用户名：<input type="text" name="usrname" value="请输入用户名"/> <br/>
+      <!-- 密码框，用户输入会被隐藏 -->
+      密码：<input type="password" name="pwd" maxlength="10"/><br/>
+      <!-- 单选按钮（name属性相同的radio之间单选） 如果name属性不同可作为多选按钮 -->
+      <!-- checked属性默认选中 -->
+      性别：<input type="radio" name="sex" value="man" checked="checked">男 <input type="radio" name="sex" value="woman">女<br/>
+      <!-- 复选框checkbox -->
+      爱好：<input type="checkbox" name="habit" value="basketball">篮球 <input type="checkbox" name="habit" value="soccer">足球<br/>
+      <!-- select下拉元素 -->
+      籍贯：
+      <select name="area">
+          <option value="none"></option>
+          <option value="changsha">长沙</option>
+          <option value="yiyang">益阳</option>
+      </select><br/>
+      <!-- 提交表单域的value和name -->
+      <input type="submit" value="提交">
+      <!-- 重置用户的填写项 -->
+      <input type="reset" value="重置"><br/>
+      <!-- 普通按钮，一般搭配javascript使用来启动脚本 -->
+      <input type="button" value="发送验证码">
+      <!-- 文件域 -->
+      <input type="file" name="file" id="123"><br/>
+      <!-- label标签：用来绑定表单元素，提升用户体验（只能绑定一个） -->
+      <label for="123">跳到哪呢</label>
+    </form>
+</body> 
+</html>

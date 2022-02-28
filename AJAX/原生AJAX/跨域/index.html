@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #result {
+            width: 200px;
+            height: 100px;
+            border: 1px solid #818181;
+        }
+    </style>
+</head>
+
+<body>
+    <button>
+        AJAX
+    </button>
+    <div id="result"></div>
+    </div>
+    <script>
+        let btn = document.querySelector('button')
+        btn.onclick = function () {
+            const xhr = new XMLHttpRequest()
+            //同源策略，url会自动补全(用http://127.0.0.1:9000/home打开了ndex.html)
+            xhr.open('GET', '/data')
+            xhr.send()
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        console.log(xhr.response);
+                    }
+                }
+            }
+        }
+
+    </script>
+    <script src="http://127.0.0.1:8080/%E8%B7%A8%E5%9F%9F/app.js"></script>
+</body>
+
+</html>

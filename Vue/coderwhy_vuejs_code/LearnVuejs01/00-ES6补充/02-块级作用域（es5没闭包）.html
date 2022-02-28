@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+    <button>按钮5</button>
+
+    <script src="../js/vue.js"></script>
+
+    <script>
+      // ES5不使用闭包
+      // var btns = document.getElementsByName("button");
+      // for (var i = 0; i < btns.length; i++) {
+      //   btns[i].addEventListener("click", function () {
+      //     console.log("第" + i + "个按钮被点击");
+      //   });
+      // }
+      // ES5使用闭包
+      // var btns = document.getElementsByName("button");
+      // for (var i = 0; i < btns.length; i++) {
+      //   (function (num) {
+      //     btns[i].addEventListener("click", function () {
+      //       console.log("第" + num + "个按钮被点击");
+      //     });
+      //   })(i);
+      // }
+      // ES6使用let
+      const btns = document.getElementsByTagName("button");
+      for (let i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+          console.log("第" + i + "个按钮被点击");
+        });
+      }
+      // 个人理解：还要理解回调的含义，当时不会立即执行，但是当回调的时候，i的值已经遍历到5
+      // （为什么是5，要理解for的执行过程，i=5的时候才会停止循环）了
+    </script>
+  </body>
+</html>

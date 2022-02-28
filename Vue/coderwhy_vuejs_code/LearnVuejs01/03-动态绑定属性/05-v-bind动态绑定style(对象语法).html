@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <h2 :style="{key(属性名): value(属性值)}">{{message}}</h2> -->
+      <!-- 要加上单引号 value当作对象来解析-->
+      <!-- <h2 :style="{fontSize: '50px'}">{{message}}</h2> -->
+      <!-- finalSize当成变量来使用 -->
+      <h2 :style="{fontSize: finalSize + 'px',color: finalColor}">
+        {{message}}
+      </h2>
+      <!-- 做一个抽取 -->
+      <h2 :style="getStyle">
+        {{message}}
+      </h2>
+    </div>
+
+    <script src="../js/vue.js"></script>
+
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          message: "你好",
+          finalSize: 100,
+          finalColor: "red",
+        },
+        methods: {
+          getStyle: function () {
+            return { fontSize: this.finalSize + "px", color: this.finalColor };
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

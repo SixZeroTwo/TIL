@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>JavaScript 函数</h1>
+
+    <p>在 HTML 中，全局函数中 <b>this </b> 的值是 window 对象。</p>
+
+    <p id="demo"></p>
+
+    <script>
+        var y = {
+            func: function () {
+                return this;
+            }
+        };
+        var x = y.func();
+
+
+        document.getElementById("demo").innerHTML = x; 
+    </script>
+
+</body>
+
+</html>

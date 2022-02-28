@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 不加v-bind只会把movies当作字符串 -->
+      <!-- <cpn v-bind:cmovies="movies" :cmessage="message"></cpn> -->
+      <!-- 测试默认值 -->
+      <cpn v-bind:cmovies="movies"></cpn>
+    </div>
+
+    <template id="cpn">
+      <div>
+        <!-- <p>{{cmovies}}</p> -->
+        <ul>
+          <li v-for="item in cmovies">{{item}}</li>
+        </ul>
+        <h2>{{cmessage}}</h2>
+      </div>
+    </template>
+
+    <script src="../js/vue.js"></script>
+
+    <script>
+      // 父传子: props
+      const cpn = {
+        template: "#cpn",
+        // 两种props的写法
+        // props: ["cmovies", "cmessage"],
+        // 提供默认值
+        props: {
+          // 类型限制
+          cmovies: Array,
+          cmessage: String,
+
+          // 提供一些默认值，以及必传值
+          cmessage: {
+            type: String,
+            default: "aaaaa",
+            required: true,
+          },
+          // cmovies: {
+          //   type: Array,
+          //   // default: [],
+          // },
+          cmovies: {
+            type: Array,
+            default() {
+              return [];
+            },
+          },
+        },
+        data() {
+          return {};
+        },
+        methods: {},
+      };
+
+      const app = new Vue({
+        el: "#app",
+        data: {
+          message: "你好",
+          movies: ["海王", "海贼王", "海尔兄弟"],
+        },
+        components: {
+          cpn,
+        },
+      });
+    </script>
+  </body>
+</html>

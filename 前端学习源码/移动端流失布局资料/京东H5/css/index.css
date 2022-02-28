@@ -1,0 +1,96 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    max-width: 640px;
+    min-width: 320px;
+    margin: 0 auto;
+    font-size: 14px;
+    font-family: -apple-system, Helvetica, sans-serif;
+    color: #666;
+    line-height: 1.5;
+    background-color: gray;
+}
+
+.app{
+    height: 45px;
+}
+.app ul{
+    height: 45px;
+    list-style: none;
+}
+.app ul li{
+    float: left;
+    height: 45px;
+    color: white;
+    line-height: 45px;
+    text-align: center;
+    background-color: #333;
+}
+.app ul li img{
+    vertical-align: middle;
+}
+.app ul li:nth-child(1){
+    width: 8%;
+}
+.app ul li:nth-child(1) img{
+    width: 10px;
+}
+.app ul li:nth-child(2){
+    width: 10%;
+}
+.app ul li:nth-child(2) img{
+    width: 30px;
+}
+.app ul li:nth-child(3){
+    width: 57%;
+}
+.app ul li:last-child{
+    width: 25%;
+    background-color: red;
+}
+
+/* 头部 */
+header{
+    position: relative;
+    height: 44px;
+    margin: 10px;
+}
+.search_btn{
+    width: 40px;
+    height: 44px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0 auto;
+    background-color: yellow;
+}
+.search_btn::after{
+    content: '';
+    display: block;
+    width: 20px;
+    height: 18px;
+    margin: 50% 50%;
+    transform: translate(-50%,-50%);
+    background-size: 20px 18px;
+    background: url(../images/s-btn.png) no-repeat;
+}
+.search_login{
+    width: 40px;
+    height: 44px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.search{
+    width: 70%;
+    height: 44px;
+    margin-left: 50%;
+    transform:translateX(-50%);
+    border-radius: 15px;
+    background-color: white;
+}

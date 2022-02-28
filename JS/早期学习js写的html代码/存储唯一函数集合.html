@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .true {
+            color: green;
+        }
+
+        .false {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="demo"></ul>
+    <script>
+        var assert = function (value, message) {
+            var demo = document.getElementById("demo");
+            var li = document.createElement("li");
+            li.className = value ? "true" : "false";
+            var text = document.createTextNode(message)
+            li.appendChild(text);
+            demo.appendChild(li);
+
+        };
+
+        var store = {
+            nextId: 1,
+            cache: {},
+            add: function (fn) {
+                console.log(fn.id);//初始时 fn.id没有被定义，值为undefined,后面有值了，逻辑上为true。
+                if (!fn.id) {
+                    fn.id = this.nextId++;//该地方先赋值 后自增。
+                    this.cache[fn.id] = fn;
+                    return true;
+                }
+                return false; //函数默认返回undefined，逻辑判断的时候等于false。
+            }
+        };
+        var ninja = function () { };
+        assert(store.add(ninja), "Function has been safely added");
+        assert(!store.add(ninja), "But it was only added once");
+        console.log(ninja.id);
+    </script>
+</body>
+
+</html>

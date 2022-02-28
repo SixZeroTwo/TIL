@@ -1,0 +1,109 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "title": "迪迦奥特曼出现了",
+      "author": "大古"
+    },
+    {
+      "oatman": "戴拿",
+      "owner": "小富",
+      "id": 4
+    },
+    {
+      "oatman": "戴拿",
+      "owner": "小富",
+      "id": 5
+    },
+    {
+      "oatman": "戴拿",
+      "owner": "小富",
+      "id": 6
+    },
+    {
+      "oatman": "戴拿",
+      "owner": "小富",
+      "id": 7
+    },
+    {
+      "oatman": "戴拿",
+      "owner": "小富",
+      "id": 8
+    },
+    {
+      "oatman": "戴拿",
+      "owner": "小富",
+      "id": 9
+    },
+    {
+      "oatman": "戴拿",
+      "owner": "小富",
+      "id": 10
+    },
+    {
+      "oatman": "戴拿",
+      "owner": "小富",
+      "id": 11
+    },
+    {
+      "oatman": "戴拿",
+      "owner": "小富",
+      "id": 12
+    },
+    {
+      "oatman": "戴拿",
+      "owner": "小富",
+      "id": 13
+    },
+    {
+      "oatman": "戴拿",
+      "owner": "小富",
+      "id": 14
+    },
+    {
+      "oatman": "戴拿",
+      "owner": "小富",
+      "id": 15
+    },
+    {
+      "oatman": "戴拿",
+      "owner": "小富",
+      "id": 16
+    },
+    {
+      "oatman": "戴拿",
+      "owner": "小富",
+      "id": 17
+    },
+    {
+      "oatman": "戴拿",
+      "owner": "小富",
+      "id": 18
+    },
+    {
+      "oatman": "戴拿",
+      "owner": "小富",
+      "id": 19
+    },
+    {
+      "oatman": "戴拿",
+      "owner": "小富",
+      "id": 20
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

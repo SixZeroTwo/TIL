@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 什么时候用箭头
+      setTimeout(function () {
+        console.log(this);
+      }, 1000);
+
+      setTimeout(() => {
+        console.log(this);
+      }, 1000);
+
+      // 结论：箭头函数中的this引用的是最近作用域中的this
+      const obj = {
+        aaa() {
+          setTimeout(function () {
+            console.log(this); // window
+          }),
+            setTimeout(() => {
+              console.log(this); // obj 对象
+            });
+        },
+      };
+    </script>
+  </body>
+</html>

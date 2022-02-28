@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 1.插槽的基本使用 -->
+      <cpn> <button>按钮</button> </cpn>
+      <cpn> <span>哈哈哈</span> </cpn>
+      <cpn> <i>呵呵呵</i> </cpn>
+      <!-- 3.放入多个，全部会显示  -->
+      <cpn><button>按钮</button> <span>哈哈哈</span> <i>呵呵呵</i> </cpn>
+      <!-- 2.插槽的默认值 -->
+      <cpn></cpn>
+    </div>
+
+    <template id="cpn">
+      <div>
+        <h2>我是标题</h2>
+        <p>我是内容，呵呵呵呵呵</p>
+        <slot><button>默认按钮</button></slot>
+      </div>
+    </template>
+
+    <script src="../js/vue.js"></script>
+
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          message: "你好",
+        },
+        components: {
+          cpn: {
+            template: "#cpn",
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

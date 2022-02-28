@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=yes">
+    <title>Document</title>
+    <style>
+        body {
+            perspective: 500px;
+        }
+
+        @keyframes rotator {
+            0% {}
+
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+
+        .box {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin: 100px auto;
+            transform-style: preserve-3d;
+            animation: rotator 4s linear infinite;
+        }
+
+        .box:hover {
+            animation-play-state: paused;
+        }
+
+        div[class ^=surface] {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+        }
+
+        .surface1 {
+            transform: translateZ(70px);
+            background-color: yellow;
+        }
+
+        .surface2 {
+            transform: translateX(70px) rotateY(-90deg);
+            background-color: blue;
+        }
+
+        .surface3 {
+            transform: translateZ(-70px) rotateY(180deg);
+            background-color: green;
+        }
+
+        .surface4 {
+            transform: translateX(-70px) rotateY(90deg);
+            background-color: gray;
+        }
+
+        .surface5 {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="surface1">1</div>
+        <div class="surface2">2</div>
+        <div class="surface3">3</div>
+        <div class="surface4">4</div>
+        <div class="surface5"></div>
+    </div>
+</body>
+
+</html>

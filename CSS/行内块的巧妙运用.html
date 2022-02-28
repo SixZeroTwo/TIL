@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border: 2px solid #333;
+            background-color: #eee;
+            text-align: center;
+            text-decoration: none;
+            line-height: 30px;
+            color: black;
+        }
+
+        .next,
+        .prev {
+            width: 85px;
+        }
+
+        .current,
+        .more {
+            background-color: white;
+        }
+
+        input {
+            width: 30px;
+            height: 30px;
+            border: 2px solid #333;
+            outline: none;
+            vertical-align: bottom;
+        }
+
+        button {
+
+            height: 30px;
+        }
+
+        .tixing1 {
+            width: 0;
+            height: 0;
+            border-bottom: 20px solid red;
+            border-right: 10px solid red;
+            border-top: 20px solid white;
+            border-left: 10px solid white;
+        }
+
+        .tixing2 {
+            width: 0;
+            height: 0;
+            border-bottom: 0px solid white;
+            border-right: 20px solid red;
+            border-top: 40px solid white;
+            border-left: 0px solid white;
+        }
+    </style>
+</head>
+
+<body style="text-align:center">
+    <a class="prev" href="">&lt;&lt;上一页</a>
+    <a href="" class="current">2</a>
+    <a href="">3</a>
+    <a href="">4</a>
+    <a href="">5</a>
+    <a href="">6</a>
+    <a href="">7</a>
+    <a href="" class="more">...</a>
+    <a class="next" href="">&gt;&gt;下一页</a>
+    到第 <input type="text"> 页
+    <button>确定</button>
+    <div class="tixing1"></div>
+    <div class="tixing2"></div>
+</body>
+
+</html>

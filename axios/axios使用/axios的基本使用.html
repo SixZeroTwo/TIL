@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="node_modules\axios\dist\axios.min.js"></script>
+</head>
+
+<body>
+    <h2>基本使用</h2>
+    <button>GET</button><button>POST</button><button>PUT</button><button>DELETE</button>
+    <script>
+        let btns = document.querySelectorAll('button')
+        btns[0].addEventListener('click', function () {
+            //发送AJAX请求
+            axios({
+                method: 'GET',
+                url: 'http://localhost:3000/posts'
+            }).then(values => {
+                console.log(values.data[0]);
+            })
+        })
+        btns[1].addEventListener('click', function () {
+            //发送AJAX请求
+            axios({
+                method: 'POST',
+                url: 'http://localhost:3000/posts',
+                data: {
+                    oatman: '戴拿',
+                    owner: '小富'
+                }
+
+
+            }).then(values => {
+                console.log(values.data);
+            })
+        })
+        btns[2].addEventListener('click', function () {
+            //发送AJAX请求
+            axios({
+                method: 'PUT',
+                url: 'http://localhost:3000/posts/3',
+                data: {
+                    oatman: '阿古茹',
+                    owner: '神秘人'
+                }
+
+
+            }).then(values => {
+                console.log(values.data);
+            })
+        })
+        btns[3].addEventListener('click', function () {
+            //发送AJAX请求
+            axios({
+                method: 'DELETE',
+                url: 'http://localhost:3000/posts/3',
+
+
+            }).then(values => {
+                console.log(values.data);
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,269 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+/* 版心公共类：宽1200px，居中 */
+.w{
+    width: 1200px;
+    margin: 0 auto;
+}
+.clearfix:before,.clearfix:after {
+    content:"";
+    display:table; 
+  }
+  .clearfix:after {
+    clear:both;
+  }
+  .clearfix {
+     *zoom:1;
+  }   
+body{
+    width: 1920px;
+    background-color: #f3f5f7;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+.head{
+    height: 42px;
+    padding: 30px 0px;
+    /* background:#f3f5f7; */
+}
+.logo{
+    float: left;
+    /* margin:29 0; */
+}
+.nav{
+    float:left;
+    margin-left:77px ;
+    width: 360px;
+}
+.nav li{
+    float:left;
+}
+.nav a{
+    display: block;    
+    height: 42px;
+    padding: 0 8px;
+    margin-right: 42px;
+    color: #050505;
+    font: 18px 'Arial';
+    line-height: 42px;
+    text-decoration: none;
+}
+.nav a:hover{
+    border-bottom: 2px solid #00a4ff;
+}
+.search{
+    float: left;
+
+}
+
+.search input{
+    float: left;
+    width: 360px;
+    height: 42px;
+    border:1px solid #00a4ff;
+    color:gray;
+    font-size: 14px;
+    text-indent: 20px;
+}
+.search button{
+    float: left;
+    width: 50px;
+    height: 42px;
+    border: 0px;
+    background:url(images/search.png) #00a4ff center center no-repeat;
+}
+.user{
+    float: right;
+    margin-right: 30px;
+    font-size: 14px;
+    line-height:42px;
+    color: #666666;
+
+}
+.user img{
+    vertical-align: middle;
+}
+
+.banner{
+    height:420px ;
+    background: #1c036c;
+}
+
+.banner_inner{
+    height: 420px;
+    background:url(images/banner2.png);
+}
+.banner_ul1{
+    float: left;
+    width: 150px;
+    height: 390px;
+    padding: 30px 20px 0px;
+    color: white;
+    background:rgb(19,1,75,0.24);
+}
+.banner_ul1 li{
+    margin-bottom: 29px; 
+    font-size: 14px;
+    line-height: 14px;
+    background: url(images/right.png)  center right no-repeat;
+}
+.banner_ul2{
+    float: right;
+    width: 230px;
+    height: 300px;
+    margin: 60px 0;
+    background: #ffffff;
+}
+
+.first{
+height: 50px;
+font-size: 18px;
+font-weight: bold;
+line-height: 50px;
+color: white;
+text-align: center;
+background: #9bceea;
+}
+.mid1{
+    height: 35px;
+    border-bottom:1px solid #eaeaea ;
+    padding: 18px 0 16px;
+    margin: auto 20px;
+}
+.mid2_3{
+    height: 35px;
+    border-bottom:1px solid #eaeaea ;
+    padding: 14px 0 11px;
+    margin: auto 20px;
+}
+.banner_ul2 h4{
+    font-weight: normal;
+    font-size: 14px;
+}
+.banner_ul2 p{
+    font-size: 12px;
+    color: gray;
+}
+.course{
+    display: block;
+    width: 200px;   
+    height: 40px;
+    margin: 5px auto 15px;
+    border: 1px #00a4ff solid;
+    color: #00a4ff;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 40px;
+    text-align: center;
+}
+
+.goods{
+    height: 60px;
+    background-color: white;
+    box-shadow: 0 2px 3px 3px rgba(0, 0,0, 0.2);
+    color:gray;  
+    line-height: 60px;
+}
+.goods h3{
+    float: left;
+    margin-left: 30px;
+    font-size: 16px;
+    color: #00a4ff;
+
+}
+.goods ul{
+    float: left;
+    margin-left: 30px;
+}
+.goods ul li{
+    float: left;
+}
+.goods ul li a{    
+    padding: 0 30px;
+    border-left: 1px solid gray;
+    color: black;
+}
+.goods>a{
+    float: right;
+    margin-right: 30px;
+    font-size: 14px;
+    color: #00a4ff;
+}
+.box{
+    margin-top: 30px;
+}
+.hd{
+    height: 45px;
+}
+.hd h3{
+    float: left;
+    color: black;
+    font-size: 20px;
+    font-weight: normal;
+}
+.hd a{
+    float: right;
+    margin-top: 10px;
+    margin-right: 30px;
+    font-size: 12px;
+    color: gray;
+}
+.bd{
+
+}
+.bd li{
+    float: left;
+    width: 230px;
+    height: 270px;
+    margin-right: 12px;
+    margin-bottom: 15px;
+}
+#special{
+margin-right: 0px;
+}
+
+.bd li img{
+    width: 100%;;
+}
+.bd li h4{
+    margin: 20px 20px 25px;
+    font-size: 14px;
+    color: #050505;
+    font-weight: 400;
+}
+
+.footer{
+    height: 415px;
+    background-color: white;
+}
+.footer .w{
+    padding-top: 35px;
+}
+
+.copyright{
+    float: left;
+}
+
+.links{
+    float: right;
+}
+.links dl{
+    float: left;
+    margin-left: 100px;
+}
+
+.links dl dt{
+    font-size: 16px;
+color: #333333;
+}
+
+.links dl dd{
+    font-size: 12px;
+    color: #333333;
+}

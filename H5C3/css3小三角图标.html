@@ -1,0 +1,45 @@
+<!-- 盒子旋转四十五度：只加相邻两条边的border -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: relative;
+            width: 250px;
+            height: 35px;
+            margin: 0 auto;
+            border: 1px solid gray;
+        }
+
+        div::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            width: 10px;
+            height: 10px;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+            border-top: 1px solid gray;
+            border-right: 1px solid gray;
+            transition: all 0.5s ease;
+        }
+
+        div:hover::after {
+            transform: rotate(-45deg);
+
+        }
+    </style>
+</head>
+
+
+<body>
+    <div></div>
+</body>
+
+</html>

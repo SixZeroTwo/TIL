@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1 .使用setTimeOUT
+      // setTimeout(() => {
+      //   console.log("Hello world!");
+      // }, 1000);
+
+      // 参数 -》 函数
+      // resolve ,reject本身它们本身又是函数
+      // 链式编程
+      new Promise((resolve, reject) => {
+        // 1. 第一次网络请求的代码
+        setTimeout(() => {
+          resolve();
+        }, 1000);
+      }).then(() => {
+        // 第一次拿到结果的代码
+        console.log("Hello World");
+
+        // 2. 第二次网络请求的代码
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve();
+          }, 1000);
+        }).then(() => {
+          // 第二次处理的代码
+          console.log("Hello Vuejs!");
+
+          //3. 第三次请求的代码
+          return new Promise((resolve, reject) => {
+            setTimeout(() => {
+              resolve();
+            }, 1000);
+          }).then(() => {
+            // 第三次处理的代码
+            console.log("Hello Python!");
+          });
+        });
+      });
+      // 什么情况下会用到Promise?
+      // 一般情况下是有异步操作时，使用Promise对这个异步操作进行封装
+      // new -> 构造函数(1.保存一些状态信息， 2. 执行传入的函数)
+      // 在执行传入的回调函数时，会传入两个参数，resolve, reject，本身又是函数
+      new Promise((resolve, reject) => {
+        setTimeout(() => {
+          // 将网络的请求和处理进行分离
+          // 成功的时候
+          resolve("Hello World");
+
+          //失败的时候调用rejcet
+          reject("error message");
+        }, 1000);
+      })
+        .then((data) => {
+          // 1. 100行的处理代码 优雅啊
+          console.log(data);
+          console.log(data);
+          console.log(data);
+          console.log(data);
+          console.log(data);
+        })
+        .catch((err) => {
+          // 处理错误情况
+          console.log(err);
+        });
+    </script>
+  </body>
+</html>

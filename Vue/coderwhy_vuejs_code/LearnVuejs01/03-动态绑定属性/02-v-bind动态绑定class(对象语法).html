@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .active {
+        color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <h2 class="active">{{message}}</h2> -->
+      <!-- <h2 :class="active">{{message}}</h2> -->
+
+      <!-- <h2 :class="{类名: boolean值}"> {{message}} </h2> -->
+      <!-- 通过布尔值来控制，在console里面控制app.isActive来控制 -->
+      <!-- 也可以自己添加静态class,两个class会合并 -->
+      <h2 class="title" :class="{active: isActive,line: isLine}">
+        {{message}}
+      </h2>
+      <!-- 这里的getClass的括号不可省略 -->
+      <h2 class="title" :class="getClass()">{{message}}</h2>
+      <!-- 在按钮里绑定事件动态改变 -->
+      <button @click="changeColor">按钮</button>
+    </div>
+
+    <script src="../js/vue.js"></script>
+
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          message: "你好",
+          active: "active",
+          isActive: false,
+          isLine: false,
+        },
+        methods: {
+          changeColor: function () {
+            this.isActive = !this.isActive;
+          },
+          getClasses: function () {
+            // 这里应用需要加this
+            return {active: this.isActive,line: this.isLine};
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

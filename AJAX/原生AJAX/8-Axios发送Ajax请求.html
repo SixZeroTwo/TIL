@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin="anonymous" src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+</head>
+
+<body>
+    <button>GET</button><button>POST</button><button>AJAX</button>
+    <script>
+        const btns = document.querySelectorAll('button')
+        //配置baseURL
+        axios.default.baseURL = 'http://127.0.0.1:8000'
+        btns[0].addEventListener('click', function () {
+            //GET请求
+            axios.get('/axios_server', {
+
+                //url参数
+                params: {
+                    id: 100,
+                    vip: 7
+                },
+                //请求头信息 会引起CORS error
+                /* headers: {
+                    name: 'James',
+                    age: 18
+                } */
+            }).then(values => {
+                console.log(values);
+            }, err => {
+                console.log(err);
+            })
+        })
+        btns[1].addEventListener('click', function () {
+            //GET请求
+            axios.post('/axios_server', {
+                data: {
+                    username: 'Mengxixi',
+                    password: 'ailyy'
+                },
+                params: {
+                    id: 200,
+                    vip: 9
+                },
+                //请求头信息 会引起CORS error
+                /*                 headers: {
+                                    weight: 140,
+                                    height: 180
+                                }, */
+                //请求体
+
+            }).then(values => {
+                console.log(values);
+            }, err => {
+                console.log(err);
+            })
+        })
+        //axios函数发送AJAX
+        btns[2].addEventListener('click', function () {
+            //使用axios()设置请求的参数
+            axios({
+                //method
+                method: 'POST',
+                //url
+                url: '/axios_server',
+                //url参数
+                params: {
+                    mood: 'FUCK!',
+                    name: 'Angry Li'
+                },
+                //请求头信息
+                headers: {
+                    Dick: '18cm',
+                    Pussy: 'beauty'
+                },
+                //请求体
+                data: {
+                    username: 'U Dad',
+                    pwd: 'xixi'
+                }
+            }).then(values => { console.log(values); }, reason => { console.log(reason); })
+        })
+    </script>
+</body>
+
+</html>

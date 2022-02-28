@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <cpn :number1="num1" :number2="num2"></cpn>
+    </div>
+
+    <template id="cpn">
+      <div>
+        <h2>{{dnumber1}}</h2>
+        <!-- 绑定的组件里面的number1 -->
+        <!-- <input type="text" v-model="dnumber1" /> -->
+        <input type="text" v-bind:value="dnumber1"
+        @input="dnumber1=$event.target.value/>
+        <h2>{{dnumber2}}</h2>
+
+        <input type="text" v-bind:value="dnumber2"
+        @input="dnumber=$event.target.value/>
+      </div>
+    </template>
+
+    <script src="../js/vue.js"></script>
+
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          num1: 1,
+          num2: 2,
+        },
+        components: {
+          cpn: {
+            template: "#cpn",
+            props: {
+              number1: Number,
+              number2: Number,
+            },
+            // 不能在子组件改变父组件
+            data() {
+              return {
+                dnumber1: this.number1,
+                dnumber2: this.number2,
+              };
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

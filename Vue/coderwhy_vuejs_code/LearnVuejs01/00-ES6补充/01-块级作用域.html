@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+    <button>按钮5</button>
+
+    <script src="../js/vue.js"></script>
+
+    <script>
+      // ES5之前因为if和for都没有块级作用域的概念，所以在很多时候，我们都必须借用与functuon的作用域来解决应用外面变量的问题
+      // ES6中加入了let，let他是有我们的if和for块级作用域
+      // 1 变量作用域：变量在什么范围内是可用的
+      // {
+      // var name = "why";
+      // console.log(name);
+      // }
+      // console.log(name); // 可以访问
+      // 2 没有块级作用域引起的问题 if的块级
+      // var func;
+      // if (true) {
+      //   func = function () {
+      //     console.log(name);
+      //   };
+      //   // func()
+      // }
+      // name = "kobe";
+      // func(); // 在外面可以改变name的值
+
+      // 3 没有块级作用域引起的问题：for的块级
+      // 为什么闭包可以解决问题：函数是一个作用域
+      // var btns = document.getElementsByName("button");
+      // for (var i = 0; i < btns.length; i++) {
+      //   btns[i].addEventListener("click", function () {
+      //     console.log("第" + i + "个按钮被点击");
+      //   });
+      // }
+      // var btns = document.getElementsByName("button");
+      // for (var i = 0; i < btns.length; i++) {
+      //   (function (num) {
+      //     btns[i].addEventListener("click", function () {
+      //       console.log("第" + num + "个按钮被点击");
+      //     });
+      //   })(i);
+      // }
+
+      const btns = document.getElementsByTagName("button");
+      for (let i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+          console.log("第" + i + "个按钮被点击");
+        });
+      }
+      // 个人理解：还要理解回调的含义
+    </script>
+  </body>
+</html>

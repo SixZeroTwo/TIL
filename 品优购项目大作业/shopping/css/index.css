@@ -1,0 +1,54 @@
+.main{
+    width: 980px;
+    height: 465px;
+    margin-left: 220px;
+    padding-top: 10px;
+}
+
+.focus{
+    float: left;
+    width: 720px;
+    height: 455px;
+    background: url(../upload/focus1.png);
+}
+
+.newflash{
+    float:right;
+    border: 1px gray solid;
+    width: 250px;
+    height: 455px;
+}
+
+.news{
+    height: 165px;
+    padding: 10px 0px;
+}
+.news div{
+    padding:0 15px; 
+    padding-bottom: 10px;
+    border-bottom: 1px dotted gray;
+    font-size: 16px;
+    line-height: 16px;
+}
+.new div p{
+    float:left;
+}
+.new div a{
+    float:right;
+}
+.news ul li{
+    padding: 0px 15px;
+    margin-top: 5px; 
+}
+.news ul li a{
+
+    font-size: 12px;
+}
+
+.lifeservice{
+    height: 209px;
+}
+
+.bargain{
+    margin-top: 5px;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .true {
+            color: green;
+        }
+
+        .false {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="test"></button>
+    <ul id="demo"></ul>
+    <script>
+        var assert = function (value, message) {
+            var demo = document.getElementById("demo");
+            var li = document.createElement("li");
+            li.className = value ? "true" : "false";
+            var text = document.createTextNode(message)
+            li.appendChild(text);
+            demo.appendChild(li);
+
+        };
+        assert(this == window, "this == window");
+        var button = new function () {
+            this.val = false;
+            this.change = () => {
+                this.val = true;
+                assert(this == button, "this == button");
+                assert(button.val == true, "button.val == true");
+                assert(window.val == true, "window.val == true");
+            };
+        };
+        console.log(button.val);
+        var test = document.getElementById("test");
+        test.addEventListener("mouseover", button.change);
+    </script>
+</body>
+
+</html>

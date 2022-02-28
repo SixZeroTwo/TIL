@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <template id="cpn">
+        <div></div>
+    </template>
+    <div id="demo">
+        <cpn></cpn>
+        <cpn ref="cpn2"></cpn>
+        <button @click='btnClick1'>父组件按钮--操控组件1</button>
+        <button @click='btnClick2'>父组件按钮--操控组件2</button>
+
+    </div>
+</body>
+<script>
+    //注册组件 Vue.component
+    const cpnC = {
+        template: '#cpn',
+        methods: {
+            showMessage() {
+                alert('子组件的显示函数！')
+            }
+        }
+
+    }
+    new Vue({
+        el: '#demo',
+        components: {
+            cpn: cpnC,
+        },
+        methods: {
+            btnClick1() {
+                this.$children[0].showMessage()
+            },
+            btnClick2() {
+                this.$refs.cpn2.showMessage()
+            }
+        }
+    })
+</script>
+
+</html>

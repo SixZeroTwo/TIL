@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">{{message}}</div>
+    <!-- mustache语法中，不仅仅可以写变量，也可以写简单的表达式 -->
+    <div id="app">{{firstName + ' ' + lastName}}</div>
+    <div id="app">{{firstName}} {{lastName}}</div>
+    <!-- 后续也可使用计算属性 来简化 -->
+    <div>{{counter * 2}}</div>
+
+    <script src="../js/vue.js"></script>
+
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          message: "你好",
+          firstName: "kobe",
+          lastName: "bryant",
+          counter: 100
+        },
+      });
+    </script>
+  </body>
+</html>
