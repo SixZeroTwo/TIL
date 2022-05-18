@@ -16,7 +16,7 @@ Function.prototype.myApply = function (thisArg, args) {
 }
 
 //call
-Function.prototype.myCall = function (thisArg = window, ...args = []) {
+Function.prototype.myCall = function (thisArg = window, ...args) {
   //this对象利用key绑定并调用Function的实例对象——即具体的函数fn
   const key = Symbol.for()
   thisArg[key] = this
@@ -28,7 +28,7 @@ Function.prototype.myCall = function (thisArg = window, ...args = []) {
 
 //bind
 //fn.bind(thisArg,...args)函数返回已经绑定好thisArg的fn，并且args值可以作为fn的预设参数，与之后加入的参数一起作为执行时的参数
-Function.prototype.myBind = function (thisArg = window, ...args = []) {
+Function.prototype.myBind = function (thisArg = window, ...args) {
   //记录fn
   let fn = this
   return function newFn(...newArgs) {

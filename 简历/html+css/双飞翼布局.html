@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .outer {}
+
+    .clearfix::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    #center {
+      float: left;
+      width: 100%;
+      height: 200px;
+
+    }
+
+    #inner {
+      height: 200px;
+      margin: 0 200px;
+      background-color: red;
+    }
+
+    #left {
+      float: left;
+      width: 200px;
+      height: 200px;
+      margin-left: -100%;
+      background-color: yellow;
+    }
+
+    #right {
+      float: left;
+      width: 200px;
+      height: 200px;
+      margin-left: -200px;
+      background-color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="outer clearfix">
+    <div id="center">
+      <div id="inner">我是中间</div>
+    </div>
+    <div id="left">我是左边</div>
+    <div id="right">我是右边</div>
+
+  </div>
+
+</body>
+
+</html>
